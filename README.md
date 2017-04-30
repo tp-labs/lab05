@@ -20,14 +20,14 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 
 ```bash
 $ git clone https://github.com/${GITHUB_USERNAME}/lab5 lab6
+$ cd lab6
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab6
-$ cd lab6
 ```
 
 ```bash
 $ mkdir tests
-$ curl https://github.com/philsquared/Catch/releases/download/v1.9.3/catch.hpp -o tests/catch.hpp
+$ wget https://github.com/philsquared/Catch/releases/download/v1.9.3/catch.hpp -o tests/catch.hpp
 $ cat > tests/main.cpp <<EOF
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
@@ -35,14 +35,16 @@ EOF
 ```
 
 ```bash
-$ sed '/option(BUILD_EXAMPLES "Build examples" OFF)/a option(BUILD_TESTS "Build tests" OFF)' CMakeLists.txt
+$ sed -i '' '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
+option(BUILD_TESTS "Build tests" OFF)
+' CMakeLists.txt > CMakeLists.txt
 $ cat >> CMakeLists.txt <<EOF
 
 if(BUILD_TESTS)
 	enable_testing()
-	file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
-	add_executable(check ${${PROJECT_NAME}_TEST_SOURCES})
-	target_link_libraries(check ${PROJECT_NAME} ${DEPENDS_LIBRARIES})
+	file(GLOB \${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
+	add_executable(check \${\${PROJECT_NAME}_TEST_SOURCES})
+	target_link_libraries(check \${PROJECT_NAME} \${DEPENDS_LIBRARIES})
 	add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes") 
 endif()
 EOF
@@ -54,7 +56,7 @@ $ cat >> tests/test1.cpp <<EOF
 #include <print.hpp>
 
 TEST_CASE("output values should match input values", "[file]") {
-  str::string text = "hello";
+  std::string text = "hello";
   std::ofstream out("file.txt");
   
   print(text, out);
@@ -69,23 +71,29 @@ EOF
 ```
 
 ```bash
-$ sed '/cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON' CMakeLists.txt
-$ cat >> .travis.yml <<EOF
-cmake --build _build --target tests
-EOF
+$ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON
+$ cmake --build _build
+$ cmake --build _build --target test
 ```
 
 ```bash
-$ mkdir artifacts && cd artifacts
-$ screencapture -T 10 screenshot.jpg
-<Command>-T
-$ open https://github.com/${GITHUB_USERNAME}/lab6
+$ sed -i '' 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
+$ cat >> .travis.yml <<EOF
+- cmake --build _build --target tests
+EOF
 ```
 
 ```bash
 $ git add .
 $ git commit -m"added tests"
 $ git push origin master
+```
+
+```bash
+$ mkdir artifacts
+$ screencapture -T 20 artifacts/screenshot.jpg
+<Command>-T
+$ open https://github.com/${GITHUB_USERNAME}/lab6
 ```
 
 ## Links
