@@ -48,7 +48,25 @@ endif()
 EOF
 ```
 
-Написать тесты для функции print
+```bash
+$ cat >> tests/test1.cpp <<EOF
+#include "catch.hpp"
+#include <print.hpp>
+
+TEST_CASE("output values should match input values", "[file]") {
+  str::string text = "hello";
+  std::ofstream out("file.txt");
+  
+  print(text, out);
+  
+  std::string result;
+  std::ifstream in("file.txt");
+  in >> result;
+  
+  REQUIRE(result == text);
+}
+EOF
+```
 
 ```bash
 $ sed '/cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON' CMakeLists.txt
