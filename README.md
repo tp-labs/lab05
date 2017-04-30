@@ -77,6 +77,7 @@ $ cmake --build _build --target test
 ```
 
 ```bash
+$ sed -i '' 's/lab5/lab6/' README.md
 $ sed -i '' 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
 $ cat >> .travis.yml <<EOF
 - cmake --build _build --target tests
