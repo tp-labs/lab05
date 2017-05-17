@@ -8,7 +8,7 @@ $ open https://github.com/philsquared/Catch
 
 ## Tasks
 
-- [ ] 1. Создать публичный репозиторий с названием **lab6** на сервисе **GitHub**
+- [ ] 1. Создать публичный репозиторий с названием **lab06** на сервисе **GitHub**
 - [ ] 2. Выполнить инструкцию учебного материала
 - [ ] 3. Ознакомиться со ссылками учебного материала
 - [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
@@ -20,10 +20,10 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
 ```bash
-$ git clone https://github.com/${GITHUB_USERNAME}/lab5 lab6
+$ git clone https://github.com/${GITHUB_USERNAME}/lab05 lab06
 $ cd lab6
 $ git remote remove origin
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab6
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab06
 ```
 
 ```bash
@@ -78,7 +78,7 @@ $ cmake --build _build --target test
 ```
 
 ```bash
-$ sed -i '' 's/lab5/lab6/g' README.md
+$ sed -i '' 's/lab05/lab06/g' README.md
 $ sed -i '' 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
 $ cat >> .travis.yml <<EOF
 - cmake --build _build --target tests
@@ -104,7 +104,20 @@ $ travis enable
 $ mkdir artifacts
 $ screencapture -T 20 artifacts/screenshot.jpg
 <Command>-T
-$ open https://github.com/${GITHUB_USERNAME}/lab6
+$ open https://github.com/${GITHUB_USERNAME}/lab06
+```
+
+## Report
+
+```bash
+$ cd ~/workspace/labs/
+$ export LAB_NUMBER=06
+$ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+$ mkdir reports/lab${LAB_NUMBER}
+$ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
+$ cd reports/lab${LAB_NUMBER}
+$ edit REPORT.md
+$ gistup -m"lab${LAB_NUMBER}"
 ```
 
 ## Links
