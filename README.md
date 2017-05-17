@@ -11,6 +11,7 @@ $ open https://github.com/philsquared/Catch
 - [ ] 1. Создать публичный репозиторий с названием **lab6** на сервисе **GitHub**
 - [ ] 2. Выполнить инструкцию учебного материала
 - [ ] 3. Ознакомиться со ссылками учебного материала
+- [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
 
@@ -101,3 +102,7 @@ $ open https://github.com/${GITHUB_USERNAME}/lab6
 
 - [Boost.Tests](http://www.boost.org/doc/libs/1_63_0/libs/test/doc/html/)
 - [Google Test](https://github.com/google/googletest)
+
+```
+Copyright (c) 2017 Vyacheslav Vershinin
+```
