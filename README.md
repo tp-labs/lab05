@@ -86,9 +86,18 @@ EOF
 ```
 
 ```bash
+$ travis lint
+```
+
+```bash
 $ git add .
 $ git commit -m"added tests"
 $ git push origin master
+```
+
+```bash
+$ travis login --auto
+$ travis enable
 ```
 
 ```bash
