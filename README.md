@@ -38,7 +38,7 @@ EOF
 ```bash
 $ sed -i '' '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
 option(BUILD_TESTS "Build tests" OFF)
-' CMakeLists.txt > CMakeLists.txt
+' CMakeLists.txt
 $ cat >> CMakeLists.txt <<EOF
 
 if(BUILD_TESTS)
