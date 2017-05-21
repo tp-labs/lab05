@@ -28,7 +28,7 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab06
 
 ```bash
 $ mkdir tests
-$ wget https://github.com/philsquared/Catch/releases/download/v1.9.3/catch.hpp -o tests/catch.hpp
+$ wget https://github.com/philsquared/Catch/releases/download/v1.9.3/catch.hpp -O tests/catch.hpp
 $ cat > tests/main.cpp <<EOF
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
