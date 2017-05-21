@@ -61,6 +61,7 @@ TEST_CASE("output values should match input values", "[file]") {
   std::ofstream out("file.txt");
   
   print(text, out);
+  out.close();
   
   std::string result;
   std::ifstream in("file.txt");
