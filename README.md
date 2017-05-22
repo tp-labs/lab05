@@ -127,5 +127,5 @@ $ gistup -m"lab${LAB_NUMBER}"
 - [Google Test](https://github.com/google/googletest)
 
 ```
-Copyright (c) 2017 Vyacheslav Vershinin
+Copyright (c) 2017 Братья Вершинины
 ```
