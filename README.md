@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению фреймворков для тестирования на примере **Catch**
 
-```bash
+```ShellSession
 $ open https://github.com/philsquared/Catch
 ```
 
@@ -15,18 +15,18 @@ $ open https://github.com/philsquared/Catch
 
 ## Tutorial
 
-```bash
+```ShellSession
 $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
-```bash
+```ShellSession
 $ git clone https://github.com/${GITHUB_USERNAME}/lab05 lab06
 $ cd lab06
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab06
 ```
 
-```bash
+```ShellSession
 $ mkdir tests
 $ wget https://github.com/philsquared/Catch/releases/download/v1.9.3/catch.hpp -O tests/catch.hpp
 $ cat > tests/main.cpp <<EOF
@@ -35,7 +35,7 @@ $ cat > tests/main.cpp <<EOF
 EOF
 ```
 
-```bash
+```ShellSession
 $ sed -i '' '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
 option(BUILD_TESTS "Build tests" OFF)
 ' CMakeLists.txt
@@ -51,7 +51,7 @@ endif()
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> tests/test1.cpp <<EOF
 #include "catch.hpp"
 #include <print.hpp>
@@ -72,13 +72,13 @@ TEST_CASE("output values should match input values", "[file]") {
 EOF
 ```
 
-```bash
+```ShellSession
 $ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON
 $ cmake --build _build
 $ cmake --build _build --target test
 ```
 
-```bash
+```ShellSession
 $ sed -i '' 's/lab05/lab06/g' README.md
 $ sed -i '' 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
 $ sed -i '' '/cmake --build _build --target install/a\
@@ -86,22 +86,22 @@ $ sed -i '' '/cmake --build _build --target install/a\
 ' .travis.yml
 ```
 
-```bash
+```ShellSession
 $ travis lint
 ```
 
-```bash
+```ShellSession
 $ git add .
 $ git commit -m"added tests"
 $ git push origin master
 ```
 
-```bash
+```ShellSession
 $ travis login --auto
 $ travis enable
 ```
 
-```bash
+```ShellSession
 $ mkdir artifacts
 $ screencapture -T 20 artifacts/screenshot.jpg
 <Command>-T
@@ -110,7 +110,7 @@ $ open https://github.com/${GITHUB_USERNAME}/lab06
 
 ## Report
 
-```bash
+```ShellSession
 $ cd ~/workspace/labs/
 $ export LAB_NUMBER=06
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
