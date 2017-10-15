@@ -73,16 +73,21 @@ EOF
 ```
 
 ```ShellSession
-$ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON
+$ cmake -H. -B_build -DBUILD_TESTS=ON
 $ cmake --build _build
 $ cmake --build _build --target test
+```
+
+```
+$ _build/check -s -r compact
+$ cmake --build _build --target test -- ARGS=--verbose 
 ```
 
 ```ShellSession
 $ sed -i '' 's/lab05/lab06/g' README.md
 $ sed -i '' 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
 $ sed -i '' '/cmake --build _build --target install/a\
-- cmake --build _build --target test
+- cmake --build _build --target test -- ARGS=--verbose
 ' .travis.yml
 ```
 
