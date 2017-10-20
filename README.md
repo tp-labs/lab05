@@ -17,6 +17,7 @@ $ open https://github.com/philsquared/Catch
 
 ```ShellSession
 $ export GITHUB_USERNAME=<имя_пользователя>
+$ alias gsed=sed # for *-nix system
 ```
 
 ```ShellSession
@@ -36,7 +37,7 @@ EOF
 ```
 
 ```ShellSession
-$ sed -i '' '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
+$ gsed -i '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
 option(BUILD_TESTS "Build tests" OFF)
 ' CMakeLists.txt
 $ cat >> CMakeLists.txt <<EOF
@@ -84,9 +85,9 @@ $ cmake --build _build --target test -- ARGS=--verbose
 ```
 
 ```ShellSession
-$ sed -i '' 's/lab05/lab06/g' README.md
-$ sed -i '' 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
-$ sed -i '' '/cmake --build _build --target install/a\
+$ gsed -i 's/lab05/lab06/g' README.md
+$ gsed -i 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
+$ gsed -i '/cmake --build _build --target install/a\
 - cmake --build _build --target test -- ARGS=--verbose
 ' .travis.yml
 ```
