@@ -21,8 +21,14 @@ $ alias gsed=sed # for *-nix system
 ```
 
 ```ShellSession
-$ git clone https://github.com/${GITHUB_USERNAME}/lab05 lab06
-$ cd lab06
+$ cd ${GITHUB_USERNAME}/workspace
+$ pushd .
+$ source scripts/activate
+```
+
+```ShellSession
+$ git clone https://github.com/${GITHUB_USERNAME}/lab05 projects/lab06
+$ cd projects/lab06
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab06
 ```
@@ -79,7 +85,7 @@ $ cmake --build _build
 $ cmake --build _build --target test
 ```
 
-```
+```ShellSession
 $ _build/check -s -r compact
 $ cmake --build _build --target test -- ARGS=--verbose 
 ```
@@ -109,15 +115,15 @@ $ travis enable
 
 ```ShellSession
 $ mkdir artifacts
-$ screencapture -T 20 artifacts/screenshot.jpg
-<Command>-T
-$ open https://github.com/${GITHUB_USERNAME}/lab06
+$ sleep 20s && gnome-screenshot --file artifacts/screenshot.png
+# for macOS: $ screencapture -T 20 artifacts/screenshot.png
+# open https://github.com/${GITHUB_USERNAME}/lab06
 ```
 
 ## Report
 
 ```ShellSession
-$ cd ~/workspace/labs/
+$ popd
 $ export LAB_NUMBER=06
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
 $ mkdir reports/lab${LAB_NUMBER}
