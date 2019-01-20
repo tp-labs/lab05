@@ -59,7 +59,7 @@ EOF
 ```
 
 ```ShellSession
-$ cat >> tests/test1.cpp <<EOF
+$ cat > tests/test1.cpp <<EOF
 #include <print.hpp>
 
 #include "catch.hpp"
