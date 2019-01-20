@@ -66,14 +66,15 @@ $ cat > tests/test1.cpp <<EOF
 
 TEST_CASE("output values should match input values", "[file]")
 {
+  std::string filepath = "file.txt";
   std::string text = "hello";
-  std::ofstream out("file.txt");
+  std::ofstream out{filepath};
   
   print(text, out);
   out.close();
   
   std::string result;
-  std::ifstream in("file.txt");
+  std::ifstream in{filepath};
   in >> result;
   
   REQUIRE(result == text);
