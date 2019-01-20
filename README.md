@@ -3,7 +3,7 @@
 Данная лабораторная работа посвещена изучению фреймворков для тестирования на примере **Catch**
 
 ```ShellSession
-$ open https://github.com/philsquared/Catch
+$ open https://github.com/google/googletest
 ```
 
 ## Tasks
@@ -34,12 +34,11 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab05
 ```
 
 ```ShellSession
-$ mkdir tests
-$ wget https://github.com/philsquared/Catch/releases/download/v1.9.3/catch.hpp -O tests/catch.hpp
-$ cat > tests/main.cpp <<EOF
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
-EOF
+$ mkdir third-party
+$ git submodule add https://github.com/google/googletest third-party/gtest
+$ cd third-party/gtest && git checkout release-1.8.1 && cd ../..
+$ git add third-party/gtest
+$ git commit -m"added gtest framework"
 ```
 
 ```ShellSession
@@ -50,21 +49,23 @@ $ cat >> CMakeLists.txt <<EOF
 
 if(BUILD_TESTS)
   enable_testing()
+  add_subdirectory(third-party/gtest)
   file(GLOB \${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
   add_executable(check \${\${PROJECT_NAME}_TEST_SOURCES})
-  target_link_libraries(check \${PROJECT_NAME} \${DEPENDS_LIBRARIES})
-  add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes")
+  target_link_libraries(check \${PROJECT_NAME} gtest_main)
+  add_test(NAME check COMMAND check)
 endif()
 EOF
 ```
 
 ```ShellSession
+$ mkdir tests
 $ cat > tests/test1.cpp <<EOF
 #include <print.hpp>
 
-#include "catch.hpp"
+#include <gtest/gtest.h>
 
-TEST_CASE("output values should match input values", "[file]")
+TEST(Print, InFileStream)
 {
   std::string filepath = "file.txt";
   std::string text = "hello";
@@ -77,7 +78,7 @@ TEST_CASE("output values should match input values", "[file]")
   std::ifstream in{filepath};
   in >> result;
 
-  REQUIRE(result == text);
+  EXPECT_EQ(result, text);
 }
 EOF
 ```
@@ -89,7 +90,7 @@ $ cmake --build _build --target test
 ```
 
 ```ShellSession
-$ _build/check -s -r compact
+$ _build/check
 $ cmake --build _build --target test -- ARGS=--verbose
 ```
 
@@ -141,7 +142,7 @@ $ gistup -m "lab${LAB_NUMBER}"
 ## Links
 
 - [Boost.Tests](http://www.boost.org/doc/libs/1_63_0/libs/test/doc/html/)
-- [Google Test](https://github.com/google/googletest)
+- [Catch](https://github.com/catchorg/Catch2)
 
 ```
 Copyright (c) 2015-2019 The ISC Authors
