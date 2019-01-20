@@ -53,7 +53,7 @@ if(BUILD_TESTS)
   file(GLOB \${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
   add_executable(check \${\${PROJECT_NAME}_TEST_SOURCES})
   target_link_libraries(check \${PROJECT_NAME} \${DEPENDS_LIBRARIES})
-  add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes") 
+  add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes")
 endif()
 EOF
 ```
@@ -69,14 +69,14 @@ TEST_CASE("output values should match input values", "[file]")
   std::string filepath = "file.txt";
   std::string text = "hello";
   std::ofstream out{filepath};
-  
+
   print(text, out);
   out.close();
-  
+
   std::string result;
   std::ifstream in{filepath};
   in >> result;
-  
+
   REQUIRE(result == text);
 }
 EOF
@@ -90,7 +90,7 @@ $ cmake --build _build --target test
 
 ```ShellSession
 $ _build/check -s -r compact
-$ cmake --build _build --target test -- ARGS=--verbose 
+$ cmake --build _build --target test -- ARGS=--verbose
 ```
 
 ```ShellSession
