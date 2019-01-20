@@ -106,7 +106,9 @@ $ travis lint
 ```
 
 ```ShellSession
-$ git add .
+$ git add .travis.yml
+$ git add tests
+$ git add -p
 $ git commit -m"added tests"
 $ git push origin master
 ```
