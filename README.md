@@ -139,6 +139,16 @@ $ edit REPORT.md
 $ gistup -m "lab${LAB_NUMBER}"
 ```
 
+## Homework
+
+### Задание
+1. Создайте `CMakeList.txt` для библиотеки *banking*.
+2. Создайте модульные тесты на классы `Transaction` и `Account`.
+    * Используйте mock-объекты.
+    * Покрытие кода должно составлять 100%.
+3. Настройте сборочную процедуру на **TravisCI**.
+4. Настройте [Coveralls.io](https://coveralls.io/).
+
 ## Links
 
 - [Boost.Tests](http://www.boost.org/doc/libs/1_63_0/libs/test/doc/html/)
