@@ -151,6 +151,7 @@ $ gistup -m "lab${LAB_NUMBER}"
 
 ## Links
 
+- [C++ CI: Travis, CMake, GTest, Coveralls & Appveyor](http://david-grs.github.io/cpp-clang-travis-cmake-gtest-coveralls-appveyor/)
 - [Boost.Tests](http://www.boost.org/doc/libs/1_63_0/libs/test/doc/html/)
 - [Catch](https://github.com/catchorg/Catch2)
 
