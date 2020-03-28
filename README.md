@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению фреймворков для тестирования на примере **GTest**
 
-```ShellSession
+```sh
 $ open https://github.com/google/googletest
 ```
 
@@ -15,25 +15,25 @@ $ open https://github.com/google/googletest
 
 ## Tutorial
 
-```ShellSession
+```sh
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ alias gsed=sed # for *-nix system
 ```
 
-```ShellSession
+```sh
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
 $ source scripts/activate
 ```
 
-```ShellSession
+```sh
 $ git clone https://github.com/${GITHUB_USERNAME}/lab04 projects/lab05
 $ cd projects/lab05
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab05
 ```
 
-```ShellSession
+```sh
 $ mkdir third-party
 $ git submodule add https://github.com/google/googletest third-party/gtest
 $ cd third-party/gtest && git checkout release-1.8.1 && cd ../..
@@ -41,7 +41,7 @@ $ git add third-party/gtest
 $ git commit -m"added gtest framework"
 ```
 
-```ShellSession
+```sh
 $ gsed -i '/option(BUILD_EXAMPLES "Build examples" OFF)/a\
 option(BUILD_TESTS "Build tests" OFF)
 ' CMakeLists.txt
@@ -58,7 +58,7 @@ endif()
 EOF
 ```
 
-```ShellSession
+```sh
 $ mkdir tests
 $ cat > tests/test1.cpp <<EOF
 #include <print.hpp>
@@ -83,18 +83,18 @@ TEST(Print, InFileStream)
 EOF
 ```
 
-```ShellSession
+```sh
 $ cmake -H. -B_build -DBUILD_TESTS=ON
 $ cmake --build _build
 $ cmake --build _build --target test
 ```
 
-```ShellSession
+```sh
 $ _build/check
 $ cmake --build _build --target test -- ARGS=--verbose
 ```
 
-```ShellSession
+```sh
 $ gsed -i 's/lab04/lab05/g' README.md
 $ gsed -i 's/\(DCMAKE_INSTALL_PREFIX=_install\)/\1 -DBUILD_TESTS=ON/' .travis.yml
 $ gsed -i '/cmake --build _build --target install/a\
@@ -102,11 +102,11 @@ $ gsed -i '/cmake --build _build --target install/a\
 ' .travis.yml
 ```
 
-```ShellSession
+```sh
 $ travis lint
 ```
 
-```ShellSession
+```sh
 $ git add .travis.yml
 $ git add tests
 $ git add -p
@@ -114,12 +114,12 @@ $ git commit -m"added tests"
 $ git push origin master
 ```
 
-```ShellSession
+```sh
 $ travis login --auto
 $ travis enable
 ```
 
-```ShellSession
+```sh
 $ mkdir artifacts
 $ sleep 20s && gnome-screenshot --file artifacts/screenshot.png
 # for macOS: $ screencapture -T 20 artifacts/screenshot.png
@@ -128,7 +128,7 @@ $ sleep 20s && gnome-screenshot --file artifacts/screenshot.png
 
 ## Report
 
-```ShellSession
+```sh
 $ popd
 $ export LAB_NUMBER=05
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
@@ -156,5 +156,5 @@ $ gist REPORT.md
 - [Catch](https://github.com/catchorg/Catch2)
 
 ```
-Copyright (c) 2015-2019 The ISC Authors
+Copyright (c) 2015-2020 The ISC Authors
 ```
