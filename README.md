@@ -1,5 +1,7 @@
 ## Laboratory work V
 
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/tp-labs/lab05/master/preview.png)](https://yandex.ru/efir/?stream_id=vQw_LH0UfN6I)
+
 Данная лабораторная работа посвещена изучению фреймворков для тестирования на примере **GTest**
 
 ```sh
