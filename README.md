@@ -1,7 +1,5 @@
 ## Laboratory work V
 
-<a href="https://yandex.ru/efir/?stream_id=vQw_LH0UfN6I"><img src="https://raw.githubusercontent.com/tp-labs/lab05/master/preview.png" width="640"/></a>
-
 Данная лабораторная работа посвещена изучению фреймворков для тестирования на примере **GTest**
 
 ```sh
@@ -158,5 +156,5 @@ $ gist REPORT.md
 - [Catch](https://github.com/catchorg/Catch2)
 
 ```
-Copyright (c) 2015-2020 The ISC Authors
+Copyright (c) 2015-2021 The ISC Authors
 ```
