@@ -1,63 +1,54 @@
-#-------------------------------------
-#  Lab06 - Work this GitHub Actions
-#  @Kyala16
-#-------------------------------------
-
-name: bank
+name: Banking
 
 on:
   push:
-    branches: main
-
-  workflow_dispatch:
-
+      branches: 
+      - master
+      
 jobs:
-  build_lib:
-    runs-on: ubuntu-latest
 
+  BuildProject:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: build banking
+          shell: bash
+          run: |
+            cd banking
+            cmake -H. -B_built
+            cmake --build _built
+          
+  Testing:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Build banking_lib
+      
+      - name: update
+        run:  |
+          git submodule update --init
+          sudo apt install lcov
+          sudo apt install g++-7
+      
+      - name: test
         shell: bash
         run: |
-          cd banking
-          mkdir built && cd built
-          cmake ..
-          cmake --build .
-          
-  Test_banking:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: prepare environment
-        run:  |
-              sudo apt install git && git submodule update --init
-              sudo apt install lcov
-              sudo apt install g++-7
-      
-      - name: Test
-        run: |
-          mkdir built && cd built
+          mkdir _built && cd _built
           CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
           cmake --build .
-          ./testBanking
+          ./RunTest
           lcov -t "banking" -o lcov.info -c -d .
-
-      - name: Coveralls Parallel
+          
+      - name: CovBeg
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
           parallel: true
-          path-to-lcov: ./built/lcov.info
+          path-to-lcov: ./_built/lcov.info
           coveralls-endpoint: https://coveralls.io
 
-      - name: Coveralls Finished
+      - name: CovFin
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
           parallel-finished: true
-      
-
