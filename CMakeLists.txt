@@ -5,8 +5,8 @@ set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 project(WorkWithGtest)
 
 add_subdirectory(
-	"${CMAKE_CURRENT_SOURCE_DIR}/gtest"
-	"gtest"
+	"${CMAKE_CURRENT_SOURCE_DIR}/googletest"
+	"googletest"
 )
 
 add_subdirectory(
