@@ -1,54 +1,63 @@
-name: Banking
+#-------------------------------------
+#  Lab06 - Work this GitHub Actions
+#  @Kyala16
+#-------------------------------------
+
+name: bank
 
 on:
   push:
-      branches: 
-      - Master
-      
+    branches: main
+
+  workflow_dispatch:
+
 jobs:
-
-  BuildProject:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-
-        - name: build banking
-          shell: bash
-          run: |
-            cd banking
-            cmake -H. -B_built
-            cmake --build _built
-          
-  Testing:
+  build_lib:
     runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build banking_lib
+        shell: bash
+        run: |
+          cd banking
+          mkdir built && cd built
+          cmake ..
+          cmake --build .
+          
+  Test_banking:
+    runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       
-      - name: update
+      - name: prepare environment
         run:  |
-          git submodule update --init
-          sudo apt install lcov
-          sudo apt install g++-7
+              sudo apt install git && git submodule update --init
+              sudo apt install lcov
+              sudo apt install g++-7
       
-      - name: test
-        shell: bash
+      - name: Test
         run: |
-          mkdir _built && cd _built
+          mkdir built && cd built
           CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
           cmake --build .
-          ./RunTest
+          ./testBanking
           lcov -t "banking" -o lcov.info -c -d .
-          
-      - name: CovBeg
+
+      - name: Coveralls Parallel
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
           parallel: true
-          path-to-lcov: ./_built/lcov.info
+          path-to-lcov: ./built/lcov.info
           coveralls-endpoint: https://coveralls.io
 
-      - name: CovFin
+      - name: Coveralls Finished
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
           parallel-finished: true
+      
+
