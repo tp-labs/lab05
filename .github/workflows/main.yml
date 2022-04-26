@@ -1,0 +1,54 @@
+name: Banking
+
+on:
+  push:
+      branches: 
+      - Master
+      
+jobs:
+
+  BuildProject:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: build banking
+          shell: bash
+          run: |
+            cd banking
+            cmake -H. -B_built
+            cmake --build _built
+          
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: update
+        run:  |
+          git submodule update --init
+          sudo apt install lcov
+          sudo apt install g++-7
+      
+      - name: test
+        shell: bash
+        run: |
+          mkdir _built && cd _built
+          CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
+          cmake --build .
+          ./RunTest
+          lcov -t "banking" -o lcov.info -c -d .
+          
+      - name: CovBeg
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel: true
+          path-to-lcov: ./_built/lcov.info
+          coveralls-endpoint: https://coveralls.io
+
+      - name: CovFin
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel-finished: true
