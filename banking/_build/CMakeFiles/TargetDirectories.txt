@@ -1,0 +1,3 @@
+/home/leonard/TIMP/lab05/banking/_build/CMakeFiles/banking.dir
+/home/leonard/TIMP/lab05/banking/_build/CMakeFiles/edit_cache.dir
+/home/leonard/TIMP/lab05/banking/_build/CMakeFiles/rebuild_cache.dir
