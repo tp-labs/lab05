@@ -16,25 +16,9 @@ jobs:
           shell: bash
           run: |
             cd banking
-            cmake -H. -B_build
-            cmake --build _build
-
-  Testing:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: update
-        run:  |
-          git submodule update --init
-          sudo apt install lcov
-          sudo apt install g++-7
-      - name: test
-        shell: bash
-        run: |
-          mkdir _build && cd _build
-          CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
-          cmake --build .
-          ./RunTest
-
+            cmake -H. -B_build && cmake --build _build
+        - name: Coveralls
+          uses: coverallsapp/github-action@master
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
 
