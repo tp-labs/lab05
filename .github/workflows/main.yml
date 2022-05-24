@@ -36,3 +36,5 @@ jobs:
           CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
           cmake --build .
           ./RunTest
+
+
