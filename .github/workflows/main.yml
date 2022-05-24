@@ -14,9 +14,7 @@ jobs:
 
         - name: build banking
           shell: bash
-          run: |
-            cd banking
-            cmake -H. -B_build && cmake --build _build
+          run: cmake -H. -B_build && cmake --build _build
         - name: Coveralls
           uses: coverallsapp/github-action@master
           with:
