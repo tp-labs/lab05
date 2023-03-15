@@ -1,4 +1,4 @@
-/Users/ksenia55/labor5/_build/CMakeFiles/print.dir
+/Users/ksenia55/labor5/_build/CMakeFiles/banking.dir
 /Users/ksenia55/labor5/_build/CMakeFiles/check.dir
 /Users/ksenia55/labor5/_build/CMakeFiles/test.dir
 /Users/ksenia55/labor5/_build/CMakeFiles/edit_cache.dir

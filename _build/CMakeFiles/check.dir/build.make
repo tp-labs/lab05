@@ -69,34 +69,50 @@ include CMakeFiles/check.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/check.dir/flags.make
 
-CMakeFiles/check.dir/tests/test1.cpp.o: CMakeFiles/check.dir/flags.make
-CMakeFiles/check.dir/tests/test1.cpp.o: /Users/ksenia55/labor5/tests/test1.cpp
-CMakeFiles/check.dir/tests/test1.cpp.o: CMakeFiles/check.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/check.dir/tests/test1.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/check.dir/tests/test1.cpp.o -MF CMakeFiles/check.dir/tests/test1.cpp.o.d -o CMakeFiles/check.dir/tests/test1.cpp.o -c /Users/ksenia55/labor5/tests/test1.cpp
+CMakeFiles/check.dir/tests/test_Account.cpp.o: CMakeFiles/check.dir/flags.make
+CMakeFiles/check.dir/tests/test_Account.cpp.o: /Users/ksenia55/labor5/tests/test_Account.cpp
+CMakeFiles/check.dir/tests/test_Account.cpp.o: CMakeFiles/check.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/check.dir/tests/test_Account.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/check.dir/tests/test_Account.cpp.o -MF CMakeFiles/check.dir/tests/test_Account.cpp.o.d -o CMakeFiles/check.dir/tests/test_Account.cpp.o -c /Users/ksenia55/labor5/tests/test_Account.cpp
 
-CMakeFiles/check.dir/tests/test1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/check.dir/tests/test1.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ksenia55/labor5/tests/test1.cpp > CMakeFiles/check.dir/tests/test1.cpp.i
+CMakeFiles/check.dir/tests/test_Account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/check.dir/tests/test_Account.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ksenia55/labor5/tests/test_Account.cpp > CMakeFiles/check.dir/tests/test_Account.cpp.i
 
-CMakeFiles/check.dir/tests/test1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/check.dir/tests/test1.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ksenia55/labor5/tests/test1.cpp -o CMakeFiles/check.dir/tests/test1.cpp.s
+CMakeFiles/check.dir/tests/test_Account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/check.dir/tests/test_Account.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ksenia55/labor5/tests/test_Account.cpp -o CMakeFiles/check.dir/tests/test_Account.cpp.s
+
+CMakeFiles/check.dir/tests/test_Transaction.cpp.o: CMakeFiles/check.dir/flags.make
+CMakeFiles/check.dir/tests/test_Transaction.cpp.o: /Users/ksenia55/labor5/tests/test_Transaction.cpp
+CMakeFiles/check.dir/tests/test_Transaction.cpp.o: CMakeFiles/check.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/check.dir/tests/test_Transaction.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/check.dir/tests/test_Transaction.cpp.o -MF CMakeFiles/check.dir/tests/test_Transaction.cpp.o.d -o CMakeFiles/check.dir/tests/test_Transaction.cpp.o -c /Users/ksenia55/labor5/tests/test_Transaction.cpp
+
+CMakeFiles/check.dir/tests/test_Transaction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/check.dir/tests/test_Transaction.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ksenia55/labor5/tests/test_Transaction.cpp > CMakeFiles/check.dir/tests/test_Transaction.cpp.i
+
+CMakeFiles/check.dir/tests/test_Transaction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/check.dir/tests/test_Transaction.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ksenia55/labor5/tests/test_Transaction.cpp -o CMakeFiles/check.dir/tests/test_Transaction.cpp.s
 
 # Object files for target check
 check_OBJECTS = \
-"CMakeFiles/check.dir/tests/test1.cpp.o"
+"CMakeFiles/check.dir/tests/test_Account.cpp.o" \
+"CMakeFiles/check.dir/tests/test_Transaction.cpp.o"
 
 # External object files for target check
 check_EXTERNAL_OBJECTS =
 
-check: CMakeFiles/check.dir/tests/test1.cpp.o
+check: CMakeFiles/check.dir/tests/test_Account.cpp.o
+check: CMakeFiles/check.dir/tests/test_Transaction.cpp.o
 check: CMakeFiles/check.dir/build.make
-check: libprint.a
+check: libbanking.a
 check: third-party/gtest/googlemock/gtest/libgtest_main.a
 check: third-party/gtest/googlemock/gtest/libgtest.a
 check: CMakeFiles/check.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable check"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable check"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/check.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

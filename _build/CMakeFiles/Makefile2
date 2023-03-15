@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /Users/ksenia55/labor5/_build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/print.dir/all
+all: CMakeFiles/banking.dir/all
 all: CMakeFiles/check.dir/all
 all: third-party/gtest/all
 .PHONY : all
@@ -73,7 +73,7 @@ preinstall: third-party/gtest/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/print.dir/clean
+clean: CMakeFiles/banking.dir/clean
 clean: CMakeFiles/check.dir/clean
 clean: third-party/gtest/clean
 .PHONY : clean
@@ -130,46 +130,46 @@ third-party/gtest/googlemock/gtest/clean: third-party/gtest/googlemock/gtest/CMa
 .PHONY : third-party/gtest/googlemock/gtest/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/print.dir
+# Target rules for target CMakeFiles/banking.dir
 
 # All Build rule for target.
-CMakeFiles/print.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/print.dir/build.make CMakeFiles/print.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/print.dir/build.make CMakeFiles/print.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=11,12 "Built target print"
-.PHONY : CMakeFiles/print.dir/all
+CMakeFiles/banking.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/banking.dir/build.make CMakeFiles/banking.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/banking.dir/build.make CMakeFiles/banking.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=1,2,3 "Built target banking"
+.PHONY : CMakeFiles/banking.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/print.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ksenia55/labor5/_build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/print.dir/all
+CMakeFiles/banking.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ksenia55/labor5/_build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/banking.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ksenia55/labor5/_build/CMakeFiles 0
-.PHONY : CMakeFiles/print.dir/rule
+.PHONY : CMakeFiles/banking.dir/rule
 
 # Convenience name for target.
-print: CMakeFiles/print.dir/rule
-.PHONY : print
+banking: CMakeFiles/banking.dir/rule
+.PHONY : banking
 
 # clean rule for target.
-CMakeFiles/print.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/print.dir/build.make CMakeFiles/print.dir/clean
-.PHONY : CMakeFiles/print.dir/clean
+CMakeFiles/banking.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/banking.dir/build.make CMakeFiles/banking.dir/clean
+.PHONY : CMakeFiles/banking.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/check.dir
 
 # All Build rule for target.
-CMakeFiles/check.dir/all: CMakeFiles/print.dir/all
+CMakeFiles/check.dir/all: CMakeFiles/banking.dir/all
 CMakeFiles/check.dir/all: third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 CMakeFiles/check.dir/all: third-party/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=1,2 "Built target check"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=4,5,6 "Built target check"
 .PHONY : CMakeFiles/check.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/check.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ksenia55/labor5/_build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ksenia55/labor5/_build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/check.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ksenia55/labor5/_build/CMakeFiles 0
 .PHONY : CMakeFiles/check.dir/rule
@@ -190,7 +190,7 @@ CMakeFiles/check.dir/clean:
 third-party/gtest/googlemock/CMakeFiles/gmock.dir/all: third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/CMakeFiles/gmock.dir/build.make third-party/gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/CMakeFiles/gmock.dir/build.make third-party/gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=3,4 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=7,8 "Built target gmock"
 .PHONY : third-party/gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -217,7 +217,7 @@ third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/all: third-party/gtest/go
 third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/all: third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/build.make third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/build.make third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=5,6 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=9,10 "Built target gmock_main"
 .PHONY : third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -243,7 +243,7 @@ third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=7,8 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=11,12 "Built target gtest"
 .PHONY : third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -269,7 +269,7 @@ third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean:
 third-party/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: third-party/gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make third-party/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make third-party/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=9,10 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ksenia55/labor5/_build/CMakeFiles --progress-num=13,14 "Built target gtest_main"
 .PHONY : third-party/gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
