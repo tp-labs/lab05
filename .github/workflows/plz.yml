@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - '!*' # Do not execute on tags
     paths:
@@ -35,8 +35,8 @@ jobs:
     name: coverage
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@master
+    - uses: actions/checkout@main
+    - uses: actions/setup-node@main
       with:
         node-version: '12'
     - run: npm install -g yarn
