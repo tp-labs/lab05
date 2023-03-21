@@ -35,7 +35,7 @@ with:
 name: code covarege report
 path: coverage.out
       - name: Setup gcloud cli
-uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
 with:
 version: '290.0.1'
 project_id: adikastyle-dev
