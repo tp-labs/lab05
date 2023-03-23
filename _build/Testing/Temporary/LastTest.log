@@ -1,0 +1,19 @@
+Start testing: Mar 15 12:40 MSK
+----------------------------------------------------------
+Unable to find executable: /Users/ksenia55/labor5/_build/check
+1/1 Testing: check
+1/1 Test: check
+Command: ""
+Directory: /Users/ksenia55/labor5/_build
+"check" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"check" end time: Mar 15 12:40 MSK
+"check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 15 12:40 MSK
